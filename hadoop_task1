@@ -1,0 +1,54 @@
+# Q1.whenevr you copy a file in it's hadoop location make sure it perists its ownership and permissions?
+# Q2.when you are copying a file from local system to hadoop ,make sure if the file is already existing then delete the same file on hadoop location?
+# Q3. Create 2 folders name as test and learning on the slash location of hadoop after that create any file on the test folder and copy the same file on the learning?
+# (2){Now again copy the file and in case if the file is already existing then overwrite the file
+# (3)Now try to remove the first file that you have copied 
+# (3.1) Now make sure it does note go in trash folder
+# Q4. Whenever you are putting a file from local system to hadoop ,make sure th replication is 2
+# use set rep
+# Q5.Try to change the owner and the group of any file in hadoop to cloudera user and after that when you remove the user, empty the trash ??
+# Q6.Difference between movefromlocal and put command?
+
+
+Hadoop command history
+
+
+  hadoop dfs -mkdir /learning
+  ls -lh
+  hadoop dfs -ls /
+  hadoop dfs -touchz /test data.txt
+  hadoop dfs -touchz /test/data
+  hadoop dfs -ls /test
+  hadoop dfs -cp /test/data /learning
+  hadoop dfs -ls /learning
+  hadoop dfs -cp /test/data /test
+  hadoop dfs -cp -f  /test/data /test
+  hadoop dfs -cp /test/data /test
+  hadoop dfs -cp -f /learning/data /test
+  hadoop dfs -ls /test
+  hadoop dfs -rm /test/data
+  hadoop dfs -ls /learning
+  hadoop dfs -touchz /test/data
+  hadoop dfs -rm -skipTrash /learning/data
+  hadoop dfs -rm -skipTrash /test/data
+  hadoop dfs -setrep 2
+  pwd
+  hadoop dfs -pwd
+  hadoop dfs -setrep 2 /Desktop
+  hadoop dfs -touchz /test/sample
+  hadoop dfs -ls /test
+  hadoop dfs -chown cloudera /test/sample
+  hadoop dfs -ls /test
+  hadoop dfs -chgrp cloudera /test/sample
+  history
+  hadoop dfs -ls /test
+  hadoop dfs -setrep 2 /test 
+  hadoop dfs -ls /test
+  hadoop dfs -stat /test
+  hadoop dfs -rm /test/sample
+  hadoop dfs -expunge
+  hadoop dfs pwd
+  pwd
+  history
+  hadoop dfs -touchz /test/sample
+  hadoop dfs -rm /test/sample 
