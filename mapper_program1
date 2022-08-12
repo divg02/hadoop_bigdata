@@ -1,0 +1,9 @@
+#!/usr/bin/python
+# generating key 
+import sys
+for lines in sys.stdin:
+    words = lines.split()
+   # print(words, type(words))
+    for word in words:
+        # print(word, 1)
+	print'{0}\t{1}'.format(word, 1)
