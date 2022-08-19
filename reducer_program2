@@ -1,0 +1,13 @@
+#!/user/bin/python
+
+from collections import defaultdict
+import sys
+
+temp = defaultdict(int)
+for sub in sys.stdin:
+	for word in sub.split():
+		temp[word] += 1
+result = max(temp, key = temp.get)
+result = int(result)
+result = int(result+1)
+print("The word with Max occurence is : " +str(result))
